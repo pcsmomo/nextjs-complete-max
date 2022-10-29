@@ -5,7 +5,7 @@ function HomePage() {
 
   return (
     <div>
-      <ul></ul>
+      <h1>The Home Page</h1>
     </div>
   );
 }
