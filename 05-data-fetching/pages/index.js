@@ -1,3 +1,5 @@
+import path from "path";
+
 // run second
 function HomePage(props) {
   const { products } = props;
@@ -13,13 +15,15 @@ function HomePage(props) {
 
 // run first: consider it that it's not on front side
 export async function getStaticProps() {
+  const fs = require("fs").promises;
+
+  const filePath = path.join(process.cwd(), "data", "dummy-backend.json"); // current working directory, 'root'
+  const jsonData = await fs.readFile(filePath);
+  const data = JSON.parse(jsonData);
+
   return {
     props: {
-      products: [
-        { id: "p1", title: "Product 1" },
-        { id: "p2", title: "Product 2" },
-        { id: "p3", title: "Product 3" },
-      ],
+      products: data.products,
     },
   };
 }
