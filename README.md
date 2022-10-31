@@ -20,6 +20,10 @@ Next.js & React - The Complete Guide (incl. Two Paths!) by Maximilian Schwarzmü
 Two forms of pre-rendering
 
 - Static Generation
-- Server-side Rendering
+  - pre-generate a page _during building time_
+  - pages are prepared ahead to time and can be cached by the server / CDN serving the app
+  - `export async function getStaticProps(context) {}`
+  -
+- Server-side Rendering:
 
 </details>
