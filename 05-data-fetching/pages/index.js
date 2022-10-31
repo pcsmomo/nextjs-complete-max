@@ -14,13 +14,25 @@ function HomePage(props) {
 }
 
 // run first: consider it that it's not on front side
-export async function getStaticProps() {
+export async function getStaticProps(context) {
   console.log("(Re-)Generating...");
   const fs = require("fs").promises;
 
   const filePath = path.join(process.cwd(), "data", "dummy-backend.json"); // current working directory, 'root'
   const jsonData = await fs.readFile(filePath);
   const data = JSON.parse(jsonData);
+
+  if (!data) {
+    return {
+      redirect: {
+        destination: "/no-data",
+      },
+    };
+  }
+
+  if (data.products.length === 0) {
+    return { notFound: true };
+  }
 
   return {
     props: {
