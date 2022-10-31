@@ -15,6 +15,7 @@ function HomePage(props) {
 
 // run first: consider it that it's not on front side
 export async function getStaticProps() {
+  console.log("(Re-)Generating...");
   const fs = require("fs").promises;
 
   const filePath = path.join(process.cwd(), "data", "dummy-backend.json"); // current working directory, 'root'
@@ -25,6 +26,10 @@ export async function getStaticProps() {
     props: {
       products: data.products,
     },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 10,
   };
 }
 
