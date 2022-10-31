@@ -1,5 +1,7 @@
 import path from "path";
 
+import Link from "next/link";
+
 // run second
 function HomePage(props) {
   const { products } = props;
@@ -7,14 +9,16 @@ function HomePage(props) {
   return (
     <ul>
       {products.map((product) => (
-        <li key={product.id}>{product.title}</li>
+        <li key={product.id}>
+          <Link href={`/${product.id}`}>{product.title}</Link>
+        </li>
       ))}
     </ul>
   );
 }
 
 // run first: consider it that it's not on front side
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   console.log("(Re-)Generating...");
   const fs = require("fs").promises;
 

@@ -44,4 +44,17 @@ return {
 };
 ```
 
+### 98. Working With Dynamic Parameters
+
+> it can be done using `useRouter()` but that will render only on front side
+
+```js
+// localhost:3000/p1
+export async function getStaticProps(context) {
+  const { params } = context;
+  const productId = params.pid;
+  return {};
+}
+```
+
 </details>
