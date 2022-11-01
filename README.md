@@ -57,4 +57,8 @@ export async function getStaticProps(context) {
 }
 ```
 
+### 99. Introducing "getStaticPaths" For Dynamic Pages
+
+[DOC: getStaticPaths](https://nextjs.org/docs/basic-features/data-fetching/get-static-paths)
+
 </details>

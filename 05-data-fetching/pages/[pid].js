@@ -14,9 +14,10 @@ function ProductDetailPage(props) {
 }
 
 export async function getStaticProps(context) {
-  // console.log(JSON.stringify(context, null, 4));
-  const { params } = context;
+  console.log(JSON.stringify(context, null, 4));
+  const fs = require("fs").promises;
 
+  const { params } = context;
   const productId = params.pid;
 
   const filePath = path.join(process.cwd(), "data", "dummy-backend.json"); // current working directory, 'root'
@@ -29,6 +30,17 @@ export async function getStaticProps(context) {
     props: {
       loadedProduct: product,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { pid: "p1" } },
+      { params: { pid: "p2" } },
+      { params: { pid: "p3" } },
+    ],
+    fallback: false,
   };
 }
 
