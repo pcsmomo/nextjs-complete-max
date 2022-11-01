@@ -80,4 +80,12 @@ export async function getStaticProps(context) {
 3. `fallback: "blocking"`
    - or just this
 
+### 105. Introducing "getServerSideProps" for Server-side Rendering (SSR)
+
+We can choose onlh one either
+
+- `getStaticProps()`
+  - with `getStaticPaths()`
+- `getServerSideProps()`
+
 </details>
