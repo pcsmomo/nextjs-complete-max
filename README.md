@@ -61,4 +61,23 @@ export async function getStaticProps(context) {
 
 [DOC: getStaticPaths](https://nextjs.org/docs/basic-features/data-fetching/get-static-paths)
 
+### 104. Fallback Pages & "Not Found" Pages
+
+1. `fallback: false`
+   - deal with only specifically generated pages
+2. `fallback: true`
+   - good combination with
+     ```js
+     // getStaticProps()
+     if (!product) {
+       return { notFound: true };
+     }
+     // component
+     if (!loadedProduct) {
+       return <p>Loading...</p>;
+     }
+     ```
+3. `fallback: "blocking"`
+   - or just this
+
 </details>
