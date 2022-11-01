@@ -17,16 +17,22 @@ function ProductDetailPage(props) {
   );
 }
 
+async function getData() {
+  const fs = require("fs").promises;
+  const filePath = path.join(process.cwd(), "data", "dummy-backend.json"); // current working directory, 'root'
+  const jsonData = await fs.readFile(filePath);
+  const data = JSON.parse(jsonData);
+
+  return data;
+}
+
 export async function getStaticProps(context) {
   // console.log(JSON.stringify(context, null, 4));
-  const fs = require("fs").promises;
 
   const { params } = context;
   const productId = params.pid;
 
-  const filePath = path.join(process.cwd(), "data", "dummy-backend.json"); // current working directory, 'root'
-  const jsonData = await fs.readFile(filePath);
-  const data = JSON.parse(jsonData);
+  const data = await getData();
 
   const product = data.products.find((product) => product.id === productId);
 
@@ -38,11 +44,17 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
+  const data = await getData();
+
+  const ids = data.products.map((product) => product.id);
+
+  const pathWithParams = ids.map((id) => ({ params: { pid: id } }));
+
   return {
-    paths: [{ params: { pid: "p1" } }],
-    // fallback: false,
+    paths: pathWithParams,
+    fallback: false,
     // fallback: true,
-    fallback: "blocking",
+    // fallback: "blocking",
   };
 }
 
