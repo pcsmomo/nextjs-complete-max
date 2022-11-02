@@ -88,4 +88,8 @@ We can choose onlh one either
   - with `getStaticPaths()`
 - `getServerSideProps()`
 
+### 106. Using "getServerSideProps" for Server-side Rendering
+
+`getServerSideProps()` returns as the same as `getStaticProps()` except `revalidate` as it will always run again
+
 </details>
