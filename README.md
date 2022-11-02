@@ -106,4 +106,10 @@ export async function getServerSideProps(context) {
 - [Request: https://nodejs.org/api/http.html#http_class_http_incomingmessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
 - [Response: https://nodejs.org/api/http.html#http_class_http_serverresponse](https://nodejs.org/api/http.html#http_class_http_serverresponse)
 
+### 110. Introducing Client-Side Data Fetching (And When To Use It)
+
+- Data changing with high frequency (e.g. stock data)
+- Highly user-specific data (e.g. last orders in an online shop)
+- Partial data (e.g. data that's only used on a part of an page)
+
 </details>
