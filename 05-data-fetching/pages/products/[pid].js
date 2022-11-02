@@ -28,7 +28,6 @@ async function getData() {
 
 export async function getStaticProps(context) {
   // console.log(JSON.stringify(context, null, 4));
-
   const { params } = context;
   const productId = params.pid;
 
