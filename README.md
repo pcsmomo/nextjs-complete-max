@@ -90,6 +90,20 @@ We can choose onlh one either
 
 ### 106. Using "getServerSideProps" for Server-side Rendering
 
-`getServerSideProps()` returns as the same as `getStaticProps()` except `revalidate` as it will always run again
+- `getServerSideProps()` returns as the same as `getStaticProps()` except `revalidate` as it will always run again
+
+### 107. getServerSideProps and its Context
+
+```js
+export async function getServerSideProps(context) {
+  const { params, req, res } = context;
+  return { props: { username: "Max" } };
+}
+```
+
+> `req` and `res` are the node js classes
+
+- [Request: https://nodejs.org/api/http.html#http_class_http_incomingmessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
+- [Response: https://nodejs.org/api/http.html#http_class_http_serverresponse](https://nodejs.org/api/http.html#http_class_http_serverresponse)
 
 </details>
