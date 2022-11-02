@@ -112,4 +112,28 @@ export async function getServerSideProps(context) {
 - Highly user-specific data (e.g. last orders in an online shop)
 - Partial data (e.g. data that's only used on a part of an page)
 
+### 111. Implementing Client-Side Data Fetching
+
+[firebase](https://firebase.google.com/)
+
+1. Go to Console
+2. Create a new project, 'nextjs-course'
+3. Build -> Realtime Database -> Create Database
+   - Security rules: Start in test mode
+4. Add data
+   ```json
+   {
+     "sales": {
+       "s1": {
+         "username": "Max",
+         "volume": 100
+       },
+       "s2": {
+         "username": "Manuel",
+         "volume": 50
+       }
+     }
+   }
+   ```
+
 </details>
