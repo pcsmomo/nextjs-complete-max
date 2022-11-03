@@ -142,4 +142,12 @@ export async function getServerSideProps(context) {
 
 import `import.json` to the firebase
 
+### 121. Optimizing Data Fetching
+
+`getStaticPaths()` - `fallback`
+
+- false: we created all possible pages
+- true: it means we have fallback component which is `<p>Loading...<p>`
+- blocking: will server-render pages
+
 </details>
