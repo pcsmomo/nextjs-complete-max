@@ -136,4 +136,10 @@ export async function getServerSideProps(context) {
    }
    ```
 
+## Section 06. Project Time: Page Pre-rendering & Data Fetching
+
+### 118. Preparations
+
+import `import.json` to the firebase
+
 </details>
