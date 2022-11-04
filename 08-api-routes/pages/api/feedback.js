@@ -9,11 +9,11 @@ function handler(req, res) {
       res.status(200).json({ message: "This works!" });
       break;
     case "POST":
-      const { email, feedback } = req.body;
+      const { email, text } = req.body;
       const newFeedback = {
         id: new Date().toISOString(),
         email,
-        text: feedback,
+        text,
       };
 
       // store that in a database or in a file
@@ -21,7 +21,7 @@ function handler(req, res) {
       const fileData = fs.readFileSync(filePath);
       const data = JSON.parse(fileData);
       data.push(newFeedback);
-      fs.writeFileSync(filePath, JSON.stringify(data));
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 4));
 
       res.status(201).json({ message: "Success!", feedback: newFeedback });
       break;
