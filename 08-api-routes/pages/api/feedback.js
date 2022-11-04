@@ -34,7 +34,7 @@ function handler(req, res) {
       const filePath = buildFeedbackPath();
       const data = extractFeedback(filePath);
       data.push(newFeedback);
-      fs.writeFileSync(filePath, JSON.stringify(data, null, 4));
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 
       res.status(201).json({ message: "Success!", feedback: newFeedback });
       break;
