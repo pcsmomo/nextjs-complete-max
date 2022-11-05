@@ -34,8 +34,8 @@ function handler(req, res) {
     }
     case "GET": {
       const dummyList = [
-        { id: "c1", name: "Max", texts: "A first comment!" },
-        { id: "c2", name: "Manuel", texts: "A second comment!" },
+        { id: "c1", name: "Max", text: "A first comment!" },
+        { id: "c2", name: "Manuel", text: "A second comment!" },
       ];
 
       return res.status(200).json({ comments: dummyList });
