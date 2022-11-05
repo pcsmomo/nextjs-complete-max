@@ -1,5 +1,5 @@
 import { MongoClient } from "mongodb";
-import { mongodbUrl } from "../../config/env";
+import { MONGODB_URL } from "../../config/env";
 
 async function handler(req, res) {
   if (req.method === "POST") {
@@ -9,10 +9,10 @@ async function handler(req, res) {
       return res.status(422).json({ message: "Invalid email address." });
     }
 
-    const client = await MongoClient.connect(mongodbUrl);
+    const client = await MongoClient.connect(MONGODB_URL);
     const db = client.db();
 
-    await db.collection("emails").insertOne({ email: userEmail });
+    await db.collection("newsletter").insertOne({ email: userEmail });
 
     client.close();
 

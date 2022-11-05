@@ -1,8 +1,13 @@
-function handler(req, res) {
+import { MongoClient } from "mongodb";
+import { MONGODB_URL } from "../../../config/env";
+
+async function handler(req, res) {
   const {
     method,
     query: { eventId },
   } = req;
+
+  const client = await MongoClient.connect(MONGODB_URL);
 
   switch (method) {
     case "POST": {
@@ -20,13 +25,19 @@ function handler(req, res) {
       }
 
       const newComment = {
-        id: new Date().toISOString(),
         email,
         name,
         text,
+        eventId,
       };
 
-      console.log(newComment);
+      const db = client.db();
+
+      const result = await db.collection("comments").insertOne(newComment);
+
+      console.log(result);
+
+      newComment.id = result.insertedId;
 
       return res
         .status(201)
@@ -45,6 +56,8 @@ function handler(req, res) {
       res.setHeader("Allow", ["GET", "PUT"]);
       return res.status(405).end(`Method ${method} Not Allowed`);
   }
+
+  client.close();
 }
 
 export default handler;
