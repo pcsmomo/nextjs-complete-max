@@ -44,13 +44,15 @@ async function handler(req, res) {
         .json({ message: "Added comment", comment: newComment });
     }
     case "GET": {
-      const dummyList = [
-        { id: "c1", name: "Max", text: "A first comment!" },
-        { id: "c2", name: "Manuel", text: "A second comment!" },
-      ];
+      const db = client.db();
 
-      return res.status(200).json({ comments: dummyList });
-      break;
+      const documents = await db
+        .collection("comments")
+        .find()
+        .sort({ _id: -1 })
+        .toArray();
+
+      return res.status(200).json({ comments: documents });
     }
     default:
       res.setHeader("Allow", ["GET", "PUT"]);
