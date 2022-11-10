@@ -158,4 +158,14 @@ import `import.json` to the firebase
 npm install --save react-markdown
 ```
 
+### 190. Adding Functions To Read & Fetch Data From Markdown Files
+
+[npm gray-matter](https://www.npmjs.com/package/gray-matter)
+
+- it parses meta data and content from a file
+
+```sh
+npm install --save gray-matter
+```
+
 </details>
