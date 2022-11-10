@@ -5,10 +5,8 @@ function PostsGrid(props) {
   const { posts } = props;
 
   return (
-    <ul>
-      {posts.map((post) => (
-        <PostItem />
-      ))}
+    <ul className={classes.grid}>
+      {posts && posts.map((post) => <PostItem key={post.slug} post={post} />)}
     </ul>
   );
 }
