@@ -150,4 +150,12 @@ import `import.json` to the firebase
 - true: it means we have fallback component which is `<p>Loading...<p>`
 - blocking: will server-render pages
 
+## Section 11. Complete App Example: Build a Full Blog A to Z
+
+### 188. Rendering Markdown As JSX
+
+```sh
+npm install --save react-markdown
+```
+
 </details>
