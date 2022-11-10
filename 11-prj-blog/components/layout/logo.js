@@ -1,5 +1,7 @@
+import classes from "./logo.module.css";
+
 function Logo() {
-  return <div>Logo</div>;
+  return <div className={classes.logo}>Noah's Next Blog</div>;
 }
 
 export default Logo;
