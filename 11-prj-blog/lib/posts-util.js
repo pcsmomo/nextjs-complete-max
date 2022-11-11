@@ -8,6 +8,8 @@ const postsDirectory = path.join(process.cwd(), "posts");
 function getPostData(fileName) {
   const filePath = path.join(postsDirectory, fileName);
   const fileContent = fs.readFileSync(filePath, "utf-8");
+
+  // parse markdown to json
   const { data, content } = matter(fileContent);
 
   const postSlug = fileName.replace(/\.md$/, ""); // removes the file extension
@@ -22,7 +24,7 @@ function getPostData(fileName) {
 }
 
 export function getAllPosts() {
-  const postFiles = fs.readFileSync(postsDirectory);
+  const postFiles = fs.readdirSync(postsDirectory);
 
   const allPosts = postFiles.map((postFile) => {
     return getPostData(postFile);
@@ -38,7 +40,7 @@ export function getAllPosts() {
   return sortedPosts;
 }
 
-function getFeaturesPosts() {
+export function getFeaturedPosts() {
   const allPosts = getAllPosts();
 
   const featuredPosts = allPosts.filter((post) => post.isFeatured);
