@@ -1,5 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import PostHeader from "./post-header";
 import classes from "./post-content.module.css";
@@ -7,8 +9,7 @@ import classes from "./post-content.module.css";
 function PostContent(props) {
   const { post } = props;
 
-  // const imagePath = `/images/posts/${slug}/${image}`;
-  const imagePath = `/images/site/noah.png`;
+  const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
   const customRenderers = {
     img(image) {
@@ -38,6 +39,21 @@ function PostContent(props) {
           </div>
         );
       }
+
+      return <p>{paragraph.children}</p>;
+    },
+    code(code) {
+      console.log(code);
+      const { className, children } = code;
+      const language = className.replace(/[^]*-/, "");
+
+      return (
+        <SyntaxHighlighter
+          style={atomDark}
+          language={language}
+          children={children}
+        />
+      );
     },
   };
 

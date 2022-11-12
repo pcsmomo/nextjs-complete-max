@@ -168,4 +168,12 @@ npm install --save react-markdown
 npm install --save gray-matter
 ```
 
+### 195. Rendering Code Snippets From Markdown
+
+[react-syntax-highlighter](https://www.npmjs.com/package/react-syntax-highlighter)
+
+```sh
+npm install --save react-syntax-highlighter
+```
+
 </details>
