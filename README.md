@@ -176,4 +176,10 @@ npm install --save gray-matter
 npm install --save react-syntax-highlighter
 ```
 
+### 199. Storing Messages With MongoDB In A Database
+
+```sh
+npm install --save mongodb
+```
+
 </details>
