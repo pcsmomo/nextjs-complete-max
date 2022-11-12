@@ -182,4 +182,15 @@ npm install --save react-syntax-highlighter
 npm install --save mongodb
 ```
 
+### 201. Adding "head" Data
+
+It is very important for post content page as it optimises search engines (SEO)
+
+```jsx
+<Head>
+  <title>{props.post.title}</title>
+  <meta name="description" content={props.post.excerpt} />
+</Head>
+```
+
 </details>
