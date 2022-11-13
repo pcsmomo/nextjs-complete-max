@@ -2,6 +2,14 @@
 
 Next.js & React - The Complete Guide (incl. Two Paths!) by Maximilian Schwarzmüller
 
+## Folder structure
+
+- 04-prj-routing: Event project 01
+- 06-prj-data-fetching: Event project 02
+- 07-prj-optimizations: Event project 03
+- 09-prj-api-routes: Event project 04
+- 11-prj-blog: Blog project
+
 ## Details
 
 <details open>

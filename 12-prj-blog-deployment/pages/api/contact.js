@@ -1,5 +1,7 @@
 import { MongoClient } from "mongodb";
-import { MONGODB_URL } from "../../config/env";
+// import { MONGODB_URL } from "../../config/env";
+
+const MONGODB_URL = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_CLUSTERNAME}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
 
 async function handler(req, res) {
   if (req.method === "POST") {
