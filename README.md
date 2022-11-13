@@ -193,4 +193,19 @@ It is very important for post content page as it optimises search engines (SEO)
 </Head>
 ```
 
+## Section 12. Deploying NextJS Apps
+
+### 207. Building NextJS Apps: Your Options
+
+1. Standard Build
+   - `next build`
+   - Produces optimized production bundles and a server-side app: Requires NodeJS server
+   - Pages are pre-rendered (if possible) but NodeJS server is required for API routes, server-side pages and page revalidations
+   - Re-deploy needed if code changes or you don't use revalidations and need page updates
+2. Full Static Build
+   - `next export`
+   - Produces 100% static app (HTML, CSS, JS): No NodeJS server required
+   - Doesn't work if your app uses API routes, server-side pages or wants to use page revalidations
+   - Re-deploy needed for all code and content changes
+
 </details>
