@@ -7,6 +7,7 @@ function MyDocument() {
       <body>
         <Main />
         <NextScript />
+        <div id="notifications" />
       </body>
     </Html>
   );
