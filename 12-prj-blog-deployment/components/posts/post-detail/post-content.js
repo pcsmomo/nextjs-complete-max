@@ -50,7 +50,6 @@ function PostContent(props) {
       return <p>{paragraph.children}</p>;
     },
     code(code) {
-      console.log(code);
       const { className, children } = code;
       const language = className.replace(/[^]*-/, "");
 
