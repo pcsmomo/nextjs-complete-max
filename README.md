@@ -288,4 +288,33 @@ npm run export
 # it will generate 'out' directory
 ```
 
+### 219. How Does Authentication Work (In React & NextJS Apps)?
+
+#### Two ways to authenticate
+
+- Server-side Sessions
+  - Store unique identifier on server, send some identifier to client
+  - Client sends identifier along with requests to protected reousrces
+- Authentidcation Tokens (recommended for SPA)
+  - Create (but not store) "permission" token on server, send token to client
+  - Client sends token along with requests to protected resources
+
+#### Reasons why using tokens
+
+> SPAs works with tokens instead of sessions because
+
+- Pages are served directly and populated with logic without hitting the server
+  - (Some nextjs pages are not though)
+- Backend APIs work in a "stateless" way (they don't care about connected clients)
+  - Servers don't save information about authenticated clients
+
+#### JWT (JSON Web Tokens)
+
+- JSON Web Token
+  - Issuer Data
+  - Custom Data
+  - Secret Signing Key
+    - Only the signing server is able to verify an incoming token
+- Signed, NOT encrypted (can be parsed + read by anyone)
+
 </details>
