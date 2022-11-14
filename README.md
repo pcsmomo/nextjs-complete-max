@@ -216,4 +216,44 @@ It is very important for post content page as it optimises search engines (SEO)
    - Doesn't work if your app uses API routes, server-side pages or wants to use page revalidations
    - Re-deploy needed for all code and content changes
 
+### 211. Running a Test Build & Reducing Code Size
+
+```sh
+npm run build
+
+Route (pages)                                      Size     First Load JS
+┌ ● / (ISR: 60 Seconds)                            1.05 kB        78.8 kB
+├   └ css/0b7eed4ff99cfd8a.css                     606 B
+├   /_app                                          0 B            74.5 kB
+├ ○ /404                                           181 B          74.7 kB
+├ λ /api/contact                                   0 B            74.5 kB
+├ ○ /contact                                       1.3 kB         75.8 kB
+├   └ css/f8039d3041f1b6e3.css                     709 B
+├ ● /posts (ISR: 60 Seconds)                       861 B          78.7 kB
+├   └ css/bf52dc61e5ba2b27.css                     436 B
+└ ● /posts/[slug] (ISR: 5 Seconds) (772 ms)        272 kB          350 kB
+    └ css/1c165c261101802e.css                     436 B
+    ├ /posts/mastering-javascript (391 ms)
+    └ /posts/getting-started-with-nextjs (381 ms)
++ First Load JS shared by all                      75.3 kB
+  ├ chunks/framework-8c5acb0054140387.js           45.4 kB
+  ├ chunks/main-2364f599a24c3599.js                25.7 kB
+  ├ chunks/pages/_app-1aa950c7dc621994.js          2.6 kB
+  ├ chunks/webpack-ee7e63bc15b31913.js             815 B
+  └ css/2a9ae2bcaf0d7f3f.css                       783 B
+```
+
+`/posts/[slug] (ISR: 5 Seconds) (772 ms) 272 kB 350 kB` is too big!!
+
+[react-syntax-highlighter - light build](https://github.com/react-syntax-highlighter/react-syntax-highlighter#light-build)
+
+```sh
+└ ● /posts/[slug] (ISR: 5 Seconds) (772 ms)        272 kB          350 kB
+# -> After refactoring
+└ ● /posts/[slug] (ISR: 5 Seconds) (762 ms)        49.9 kB         128 kB
+```
+
+> And this is before compression. \
+> NodeJS will compress these files
+
 </details>
