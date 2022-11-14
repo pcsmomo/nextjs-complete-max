@@ -263,4 +263,17 @@ npm start
 npm install sharp --save
 ```
 
+### 212. A Full Deployment Example (To Vercel)
+
+1. create an vercel account
+2. create a private repo
+3. push all code to the repo
+<!-- 4. github settings -> developer settings -> personal access token (classic)
+   - note: local development
+   - check `repo`, `admin:repo_hook`, `delete_repo`
+   - generate -->
+4. vercel -> import git repository
+5. deploy with default settings
+6. make a change and push to the github -> CD(continuous deployment)
+
 </details>
