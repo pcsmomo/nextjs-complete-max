@@ -337,4 +337,14 @@ npm install --save next-auth
 prettier -w . '!**/.next'
 ```
 
+```sh
+npm install --save mongodb
+npm install --save bcryptjs
+```
+
+```js
+import { hash } from "bcryptjs";
+hash(password, 12); // for salt number, the higher the more secure
+```
+
 </details>
