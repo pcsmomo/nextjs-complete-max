@@ -9,6 +9,7 @@ Next.js & React - The Complete Guide (incl. Two Paths!) by Maximilian Schwarzmü
 - 07-prj-optimizations: Event project 03
 - 09-prj-api-routes: Event project 04
 - 11-prj-blog: Blog project
+- 13-auth: Auth project
 
 ## Details
 
