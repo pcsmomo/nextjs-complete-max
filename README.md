@@ -256,4 +256,11 @@ Route (pages)                                      Size     First Load JS
 > And this is before compression. \
 > NodeJS will compress these files
 
+```sh
+npm run build
+npm start
+# Warning: For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'yarn add sharp', and Next.js will use it automatically for Image Optimization.
+npm install sharp --save
+```
+
 </details>
