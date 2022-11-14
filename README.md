@@ -276,4 +276,15 @@ npm install sharp --save
 5. deploy with default settings
 6. make a change and push to the github -> CD(continuous deployment)
 
+### 214. Using the "export" Feature
+
+Full Static Build : no serverside code
+
+```sh
+# run on 03-pages-file-based-routing
+npm run build
+npm run export
+# it will generate 'out' directory
+```
+
 </details>
