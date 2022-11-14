@@ -330,4 +330,11 @@ npm install --save next-auth
 # npm install --save-exact next-auth@3
 ```
 
+### 222. Adding A User Signup API Route
+
+```sh
+# prettify except .next folder
+prettier -w . '!**/.next'
+```
+
 </details>
