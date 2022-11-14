@@ -317,4 +317,17 @@ npm run export
     - Only the signing server is able to verify an incoming token
 - Signed, NOT encrypted (can be parsed + read by anyone)
 
+### 220. Must Read: Install the Right next-auth Version
+
+[next-auth v4 upgrade guide](https://next-auth.js.org/getting-started/upgrade-v4)
+
+### 221. Using The "next-auth" Library
+
+```sh
+# v4 now
+npm install --save next-auth
+# in the course it uses v3
+# npm install --save-exact next-auth@3
+```
+
 </details>
