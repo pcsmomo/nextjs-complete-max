@@ -353,4 +353,8 @@ hash(password, 12); // for salt number, the higher the more secure
 
 > We shouldn't clash with these pre-defined APIs
 
+### 227. Managing Active Session (On The Frontend)
+
+next-auth sets some cookies when successfully logged in
+
 </details>

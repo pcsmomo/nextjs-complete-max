@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+// import { signIn } from "next-auth/client"; // v3
 import { signIn } from "next-auth/react";
 
 import classes from "./auth-form.module.css";
