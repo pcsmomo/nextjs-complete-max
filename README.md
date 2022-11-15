@@ -347,4 +347,10 @@ import { hash } from "bcryptjs";
 hash(password, 12); // for salt number, the higher the more secure
 ```
 
+### 225. Adding the "Credentials Auth Provider" & User Login Logic
+
+[Doc: NextJS REST API](https://next-auth.js.org/getting-started/rest-api)
+
+> We shouldn't clash with these pre-defined APIs
+
 </details>
