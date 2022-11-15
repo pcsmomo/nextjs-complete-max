@@ -10,6 +10,8 @@ Next.js & React - The Complete Guide (incl. Two Paths!) by Maximilian Schwarzmü
 - 09-prj-api-routes: Event project 04
 - 11-prj-blog: Blog project
 - 13-auth: Auth project
+  - `user-profile.js`: client side session check
+  - `profile.js`: server side session check
 
 ## Details
 
@@ -356,5 +358,13 @@ hash(password, 12); // for salt number, the higher the more secure
 ### 227. Managing Active Session (On The Frontend)
 
 next-auth sets some cookies when successfully logged in
+
+### 230. Adding Server-Side Page Guards (And When To Use Which Approach)
+
+```js
+export function getServerSideProps() {
+  // can't use getStaticProps() as it needs to get rendered every incoming request
+}
+```
 
 </details>

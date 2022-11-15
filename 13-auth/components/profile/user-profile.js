@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import { useSession, getSession } from "next-auth/react";
+// import { useState, useEffect } from "react";
+// import { useSession, getSession } from "next-auth/react";
 
 import ProfileForm from "./profile-form";
 import classes from "./user-profile.module.css";
 
 function UserProfile() {
-  // Alternate way: using getSession
+  // Alternate way2: using getSession on client side
   // const [isLoading, setIsLoading] = useState(true);
   // const [loadedSession, setLoadedSession] = useState();
 
@@ -23,24 +23,25 @@ function UserProfile() {
   //   return <p className={classes.profile}>Loading...</p>;
   // }
 
+  // Alternate way1: using getSession on client side
   // const [session, loading] = useSession(); // v3
-  const { data: session, status } = useSession();
-  const loading = status === "loading";
+  // const { data: session, status } = useSession();
+  // const loading = status === "loading";
 
-  if (!session) {
-    window.location.href = "/auth";
-    return <p className={classes.profile}>Checking...</p>;
-  }
+  // if (!session) {
+  //   window.location.href = "/auth";
+  //   return <p className={classes.profile}>Checking...</p>;
+  // }
 
-  useEffect(() => {
-    if (!session) {
-      window.location.href = "/auth";
-    }
-  }, [session]);
+  // useEffect(() => {
+  //   if (!session) {
+  //     window.location.href = "/auth";
+  //   }
+  // }, [session]);
 
-  if (loading) {
-    return <p className={classes.profile}>Loading...</p>;
-  }
+  // if (loading) {
+  //   return <p className={classes.profile}>Loading...</p>;
+  // }
 
   return (
     <section className={classes.profile}>
