@@ -9,9 +9,6 @@ function MainNavigation() {
   const { data: session, status } = useSession();
   const loading = status === "loading";
 
-  console.log(loading);
-  console.log(session);
-
   function logoutHandler() {
     signOut();
   }
