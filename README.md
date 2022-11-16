@@ -367,4 +367,9 @@ export function getServerSideProps() {
 }
 ```
 
+### 234. Protecting API Routes
+
+> Anyone can send request to the API routes \
+> Thus, they must be protected as well, not only the ui side
+
 </details>
